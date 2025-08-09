@@ -57,15 +57,15 @@ This project enables users to upload PDF documents, index their content using em
 
 ### Admin App
 
-cd Admin
-docker build -t pdf-reader-admin .
-docker run -e BUCKET_NAME=$BUCKET_NAME -p 8083:8083 pdf-reader-admin
+-> cd Admin
+-> docker build -t pdf-reader-admin .
+-> docker run -e BUCKET_NAME=$BUCKET_NAME -p 8083:8083 pdf-reader-admin
 
 ### User App
 
-cd User
-docker build -t pdf-reader-client .
-docker run -e BUCKET_NAME=$BUCKET_NAME -p 8084:8084 pdf-reader-client
+-> cd User
+-> docker build -t pdf-reader-client .
+-> docker run -e BUCKET_NAME=$BUCKET_NAME -p 8084:8084 pdf-reader-client
 
 ---
 
