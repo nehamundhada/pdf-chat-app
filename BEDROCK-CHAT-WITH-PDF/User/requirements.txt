@@ -1,0 +1,6 @@
+streamlit       ## web application framework for python (frontend)
+pypdf           ## read and manipulate pdf files
+langchain       ## framework for building applications w language models (orchestration layer that connects everything)
+faiss-cpu       ## vector similarity search engine (fast info retrieval)
+boto3           ## aws SDK for python (acts as bridge to aws services)
+langchain_community
