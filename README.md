@@ -53,17 +53,19 @@ This project enables users to upload PDF documents, index their content using em
 
 ---
 
-## Tuning the Apps
+## Runing the Apps
 
 ### Admin App
 
-- Adjust PDF chunk size and overlap in `admin.py` under `RecursiveCharacterTextSplitter` (e.g., `chunk_size=500`, `chunk_overlap=200`) to balance granularity and performance.
-- Change the embedding model by updating `BedrockEmbeddings(model_id=...)`.
+cd Admin
+docker build -t pdf-reader-admin .
+docker run -e BUCKET_NAME=$BUCKET_NAME -p 8083:8083 pdf-reader-admin
 
 ### User App
 
-- Modify the LLM parameters in `app.py` inside `build_qa_chain_from_vectorstore()` (e.g., temperature, max_tokens) to control answer creativity and length.
-- Change number of retrieved chunks (`k`) in `vectorstore.as_retriever(search_kwargs={"k": 5})` to tune retrieval breadth.
+cd User
+docker build -t pdf-reader-client .
+docker run -e BUCKET_NAME=$BUCKET_NAME -p 8084:8084 pdf-reader-client
 
 ---
 
